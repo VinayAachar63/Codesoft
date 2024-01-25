@@ -1,0 +1,52 @@
+def simple_chatbot(user_input):
+    # Convert the user input to lowercase for case-insensitivity
+    user_input = user_input.lower()
+    # Define some predefined rules and responses
+    greetings = ["hello", "hi", "hey", "greetings"]
+    farewells = ["bye", "goodbye", "see you", "farewell"]
+    inquiries = ["how are you", "what's up", "how do you do"]
+    questions = ["what is ai","what do you mean by ai","define ai"]
+    colors = ["what is your favorite color","do you like colors","tell me a joke"]
+    technology = ["latest technology trends","favorite tech gadgets","impact of technology"]
+    doubt = ["what is your name"] 
+    default_response = "I'm sorry, I don't understand that."
+
+    # Check user input against predefined rules
+    if any(word in user_input for word in greetings):
+        return "Hello! How can I help you today?"
+
+    elif any(word in user_input for word in farewells):
+        return "Goodbye! Have a great day!"
+
+    elif any(word in user_input for word in inquiries):
+        return "I'm just a simple chatbot. What can I do for you?"
+        
+    elif any(word in user_input for word in questions):
+        return "Artificial intelligence is the science of making machines that can think like humans."
+
+    elif any(word in user_input for word in colors):
+        return "I don't have a favorite color,but I like all colors equally!" 
+
+    elif any(word in user_input for word in technology):
+        return "Technology is constantly evolving,impacting various aspects of our lives."
+
+    elif any(word in user_input for word in doubt):
+        return "My name is simple chatbot" 
+        
+        
+        
+    else:
+        return default_response
+
+# Example usage
+while True:
+    user_input = input("You: ")
+    
+    # Exit the loop if the user types "exit"
+    if user_input.lower() == "exit":
+        print("Chatbot: Goodbye!")
+        break
+
+    response = simple_chatbot(user_input)
+    print("Chatbot:", response)
+
